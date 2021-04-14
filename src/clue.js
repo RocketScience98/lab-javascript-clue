@@ -1,7 +1,7 @@
 // ITERATION 1
 
 // Suspects Collection
-const suspectsArray = [];
+
 const suspectsArray = [{
     alias: 'mrGreen',
     firstName: 'Jacob',
@@ -65,7 +65,7 @@ const suspectsArray = [{
 ];
 
 // Rooms Collection
-const roomsArray = [];
+
 const roomsArray = [
     {name: 'Dining Room'},
     {name: 'Conservatory'},
@@ -85,31 +85,33 @@ const roomsArray = [
     ];
 
 // Weapons Collection
-const weaponsArray = [];
+
 const weaponsArray = [
-    {name: rope,
+    {name: "rope",
         weight: 10},
-    {name: knife, 
+    {name: "knife", 
         weight: 8},
-    {name: candlestick, 
+    {name: "candlestick", 
         weight: 2},
-    {name: dumbbell,
+    {name: "dumbbell",
         weight: 30}, 
-    {name: poison,
+    {name: "poison",
         weight: 2}, 
-    {name: axe, 
+    {name: "axe", 
         weight: 15}, 
-    {name: bat,
+    {name: "bat",
         weight: 13},
-    {name: trophy,
+    {name: "trophy",
         weight: 25},
-    {name: pistol,
+    {name: "pistol",
         weight: 20}
     ];
 // ITERATION 2
 function selectRandom(cards){
-    if (cards.length === 0) return undefined
-    return cards[Math.round(Math.random()*cards.length)]
+    if(cards.length === 0) {
+        return undefined}
+    if(cards.length>=1){
+        return cards[Math.round(Math.random()*cards.length)]}
 }
 
 function pickMystery(){
@@ -118,7 +120,8 @@ function pickMystery(){
         weapon: selectRandom(weaponsArray),  
         room: selectRandom(roomsArray)
     }
-Game = pickMystery()
+}
+
 // ITERATION 3
 
 //should define revealMystery
@@ -127,4 +130,3 @@ Game = pickMystery()
 function revealMystery(reveal){
         return `${reveal.suspect.firstName} ${reveal.suspect.lastName} killed Mr. Boddy using the ${reveal.weapon.name} in the ${reveal.room.name}!`;
 }
-revealMystery(Game)
